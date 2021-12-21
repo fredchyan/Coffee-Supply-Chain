@@ -221,7 +221,7 @@ App = {
         App.contracts.SupplyChain.deployed().then(function(instance) {
             const productPrice = web3.utils.toWei("0.01", "ether");
             console.log('productPrice',productPrice);
-            return instance.sellItem(App.upc, App.productPrice, {from: App.metamaskAccountID});
+            return instance.sellItem(App.upc, productPrice, {from: App.metamaskAccountID});
         }).then(function(result) {
             $("#ftc-item").text(result);
             console.log('sellItem',result);
